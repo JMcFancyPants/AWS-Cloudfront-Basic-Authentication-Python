@@ -24,7 +24,7 @@ def lambda_handler(event, context):
             authDict = authHeader[0]
             authValue = authDict.get('value')
             username = '<USERNAME>'
-            password = client.get_secret_value(SecretId='basic-auth-secret').get('SecretString')
+            password = client.get_secret_value(SecretId='<AWSSECRETID>').get('SecretString')
             if password:
                 cred = (username + ":" + password).encode('utf-8')
                 cred64 = base64.b64encode(cred)
